@@ -27,10 +27,11 @@ app.get('/', function (req, res) {
 app.post('/api', async (req, res, next) => {
     try {
         textapi.sentiment({
-            'text': 'John is a very good football player!'
+            'text': req.body.theText
         }, function (error, response) {
             if (error === null) {
                 console.log(response);
+                res.send(response);
             }
         });
     } catch (error) {
