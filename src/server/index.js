@@ -4,6 +4,7 @@ const mockAPIResponse = require('./mockAPI.js')
 var aylien = require("aylien_textapi");
 const bodyParser = require('body-parser');
 
+
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -27,7 +28,9 @@ app.get('/', function (req, res) {
 app.post('/api', async (req, res, next) => {
     try {
         textapi.sentiment({
-            'text': req.body.theText
+            'text': req.body.theText,
+            // url: req.body.url,
+            mode: 'document'
         }, function (error, response) {
             if (error === null) {
                 console.log(response);
