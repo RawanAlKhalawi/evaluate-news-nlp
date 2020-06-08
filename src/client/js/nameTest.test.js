@@ -1,4 +1,4 @@
-import { checkForUrl } from './urlChecker'
+import { nameChecker } from './nameChecker'
 
 test('checking module', () => {
     expect(checkForName('Georgiou')).toBe(true)
