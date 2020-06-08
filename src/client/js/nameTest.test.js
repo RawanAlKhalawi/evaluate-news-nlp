@@ -1,4 +1,4 @@
-import { nameChecker } from './nameChecker'
+import { checkForName } from './nameChecker'
 
 test('checking module', () => {
     expect(checkForName('Georgiou')).toBe(true)
